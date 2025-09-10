@@ -8,28 +8,88 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="container-fluid mt-4">
-    <div class="card border-dark border-5 m-3 p-3">
-    <h1 class="text-center">Welcome to your Hogwarts Spells & Potions Resource</h1>
-        <div class="card-body text-center">
-            <h3 class="card-title">Ask a question, if you dare:</h3>
-            <pre id="user-Prompt" class="text"></pre>
-            <button id="generateBtn" class="btn bg-secondary text-warning">Ask Hogwarts</button>
+<body class="container-fluid mt-5">
+
+    <!-- Main Card Container Start-->
+    <div class="card border-dark border-5 m-5 p-3">
+    
+        <!-- Header -->
+        <h1 id="header" class="text-center">Welcome to your Hogwarts Spells & Potions Resource</h1>
+        
+        <!-- Div for user input and output-display-->
+        <div class ="card bg-warning border-3 border-dark m-3 p-3">
+            <!-- User Input Section For Asking Question In AI -->
+            <div class="card-body text-center">
+                <h4 class="card-title">Ask a question, if you dare:</h4>
+                
+                <!-- Input box for user question -->
+                <input type="text" id="userPrompt" class="form-control m-3"></pre>
+                
+                <!-- Button to generate response -->
+                <button id="generateBtn" class="btn bg-secondary text-warning">Ask Hogwarts</button>
+            </div>
+            <!-- End of Input Section-->
+
+            <!-- Output Display Section -->
+            <div class= "card-body">
+                <h4 class="card-title text-center">Seek And One Shall Find:</h4>
+                
+                <!-- Output area for displaying AI response -->
+                <pre id="output-display" class="card"></pre>
+            </div>
+            
+            <!-- End of Output Display Section -->
         </div>
-        <div class= card-body>
-            <h3 class="card-title text-center">Seek And One Shall Find:</h3>
-            <pre id="response" class="text"></pre>
-    </div>
+    
+    <!-- Section for commonly used spells and potions -->
     <div class="card bg-warning border-3 border-dark m-3 p-3">
+        
+        <!--Header-->
         <h3 class="text-center">Browse Commonly Used Spells and Potions</h3>
-        <pre id="history" class="text"></pre>
+        
+        <!-- Buttons for Potions and Spells-->
         <div class="row">
             <div class="col text-center">
-                <button id="potionBtn" class="btn bg-secondary text-warning">Spells</button>
+                <button id="potionBtn" class="btn bg-secondary text-warning">Potions</button>
             </div>
             <div class="col text-center">
-                <button id="spellBtn" class="btn bg-secondary text-warning">Potions</button>
+                <button id="spellBtn" class="btn bg-secondary text-warning">Spells</button>
             </div>
+        </div>  
+        <!-- End of Buttons Section -->  
+    
+    <!-- Display area for Potions-->
+    <div class="card border-dark border-5 m-5 p-3" id="potion-card">
+        <div class="card-body">
+            <h4 class="card-title text-center">Potion:</h4>
+            <div>
+                Name:
+                Inventor:
+                Difficulty:
+                Effect:
+                Ingredients:
+                Side Effects:
+                Time:
+            </div>
+            <pre id="potion-display" class="card"></pre>
+        </div>
+    </div>    
+    <!-- Display area for Spells-->
+        <div class="card border-dark border-5 m-5 p-3" id="spell-card">
+        <div class="card-body">
+            <h4 class="card-title text-center">Spell:</h4>
+            <div>
+                Name:
+                Category:
+                Creator:
+                Effect:
+                Incantation:
+                Hand:
+            <pre id="spell-display" class="card"></pre>
+        </div>
+    </div>
+    </div>
+    <!-- Main Card Container End-->
     <script src="helpers-full.js"></script>
     <script src="secret-variables.js"></script>
     <script src="app.js"></script>
