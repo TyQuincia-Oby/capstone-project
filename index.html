@@ -51,9 +51,26 @@
         <div class="row">
             <div class="col text-center">
                 <button id="potionBtn" class="btn bg-secondary text-warning">Potions</button>
+                <div id="potionList" class="m-3 d-none">
+                    <ul id="potions" class="list-unstyled">
+                        <li id="pp">Polyjuice Potion</li>
+                        <li id="bp">Beautification Potion</li>
+                        <li id="eol">Elixir of Life</li>
+                        <li id="am">Amortentia</li>
+                    </ul>
+                </div>
             </div>
             <div class="col text-center">
                 <button id="spellBtn" class="btn bg-secondary text-warning">Spells</button>
+                <div id="spellList" class="m-3 d-none">
+                    <ul id="spells" class="list-unstyled">
+                        <li id="lu">Lumos</li>
+                        <li id="lc">Levitation Charm</li>
+                        <li id="pc">Patronus Charm</li>
+                        <li id="dc">Disarming Charm</li>
+                        <li id="bbs">Boggart Banishing Spell</li>
+                    </ul>
+                </div>
             </div>
         </div>  
         <!-- End of Buttons Section -->  
@@ -78,13 +95,49 @@
         <div class="card border-dark border-5 m-5 p-3" id="spell-card">
         <div class="card-body">
             <h4 class="card-title text-center">Spell:</h4>
-            <div>
-                Name:
-                Category:
-                Creator:
-                Effect:
-                Incantation:
-                Hand:
+            
+            <!--Lumos Card Start-->
+            <div id="lumosCard" class="d-none">
+                <h3 class="card-title text-center">Lumos</h3>
+                    <p class="card-text">
+                        Name: <span id="namelu"></span><br>
+                        Category: <span id="categorylu"></span><br>
+                        Creator: <span id="creatorlu"></span><br>
+                        Effect: <span id="effectlu"></span><br>
+                        Incantation: <span id="incantationlu"></span><br>
+                        Hand: <span id="handlu"></span>
+                    </p>
+            </div>
+            <!--Lumos Card End-->
+
+            <!--Disarming Charm Start-->
+            <div id="disarmCard" class="d-none">
+                <h3 class="card-title text-center">Disarming Charm</h3>
+                    <p class="card-text">
+                        Name: <span id="namedc"></span><br>
+                        Category: <span id="categorydc"></span><br>
+                        Creator: <span id="creatordc"></span><br>
+                        Effect: <span id="effectdc"></span><br>
+                        Incantation: <span id="incantationdc"></span><br>
+                        Hand: <span id="handdc"></span>
+                    </p>
+            </div>
+            <!--Disarming Charm Card End-->
+
+            <!--Levitation Charm Card Start-->
+            <div id="lumosCard" class="d-none">
+                <h3 class="card-title text-center">Lumos</h3>
+                    <p class="card-text">
+                        Name: <span id="namelu"></span><br>
+                        Category: <span id="categorylu"></span><br>
+                        Creator: <span id="creatorlu"></span><br>
+                        Effect: <span id="effectlu"></span><br>
+                        Incantation: <span id="incantationlu"></span><br>
+                        Hand: <span id="handlu"></span>
+                    </p>
+            </div>
+            <!--Levitation Charm Card End-->
+
             <pre id="spell-display" class="card"></pre>
         </div>
     </div>
