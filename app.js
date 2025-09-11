@@ -23,31 +23,142 @@ onEvent("spellBtn", "click", function() {
 onEvent("lu", "click", function(){
     console.log("Lumos Spell Clicked");
     //show Lumos Spell card
-
+    fetchLumosMaxima();
 });
+
+//variables for Lumos Spell
+var nameLU = "";
+var categoryLU = "";
+var effectLU = "";
+var creatorLU = "";
+var incantationLU = "";
+var handLU = "";
+
+function fetchLumosMaxima(){
+const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Lumos maxima", requestOptions)
+    .then((response) => response.json())
+    .then(function(result) {console.log(result);})
+    .catch((error) => console.error(error));
+};
 
 //Disarming Charm
 onEvent("dc", "click", function(){
     console.log("Disarming Charm Clicked")
     //show Disarming Charm Spell Card
+    fetchDisarmingCharm();
+});
 
+//variables for Levitation Charm
+var nameLC = "";
+var categoryLC = "";
+var effectLC = "";
+var creatorLC = "";
+var incantationLC = "";
+var handLC = "";
+
+function fetchDisarmingCharm(){
+const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=disarming charm", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+};
+
+//Levitation Charm 
+onEvent("lc", "click", function(){
+    console.log("Levitation Charm Clicked");
+    //show Levitation Charm card
+    fetchLevitationCharm();
 
 });
+
+//variables for Levitation Charm
+var nameLC = "";
+var categoryLC = "";
+var effectLC = "";
+var creatorLC = "";
+var incantationLC = "";
+var handLC = "";
+
+function fetchLevitationCharm(){
+const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Levitation charm", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+};
+
+
 
 //Patronus Charm
-onEvent("lc", "click", function(){
+onEvent("pc", "click", function(){
     console.log("Patronus Charm Clicked")
     //show Patronus Charm Spell Card
-
+    fetchPatronusCharm();
 });
+
+//variables for Patronus Charm
+var namePC = "";
+var categoryPC = "";
+var effectPC = "";
+var creatorPC = "";
+var incantationPC = "";
+var handPC = "";
+
+function fetchPatronusCharm(){
+const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Patronus charm", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
+};
+
+
 
 //Boggart Banishing Spell
 onEvent("bbs", "click", function(){
     console.log("Boggart Banishing Spell Clicked")
     //show Boggart Banishing Spell Card
-
+    fetchBogBan();
 });
 
+//variables for Boggart Banishing Spell
+var nameBBS = "";
+var categoryBBS = "";
+var effectBBS = "";
+var creatorBBS = "";
+var incantationBBS = "";
+var handBBS = "";
+
+function fetchBogBan(){
+    const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/spells?filter[incantation_cont]=riddikulus", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+}
 
 
 
@@ -64,26 +175,130 @@ onEvent("potionBtn", "click", function() {
 onEvent("pp", "click", function() {
     console.log("Polyjuice Potion Clicked");
     //show Polyjuice Potion card
-
+    fetchPolyjuice();
 });
+
+//variables for Polyjuice Potion
+var namePP = "";
+var difficultyPP = "";
+var effectPP = "";
+var inventorPP = "";
+var ingredientsPP = "";
+var sideEffectsPP = "";
+var timePP = "";
+
+function fetchPolyjuice(){
+    const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Polyjuice\n", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+};
 
 //Beautification Potion
 onEvent("bp", "click", function(){
     console.log("Beautification Potion Clicked");
     //show Beautification Potion card
-
+    fetchBeautifyPotion();
 });
+
+//variables for Beautification Potion
+var nameBP = "";
+var difficultyBP = "";
+var effectBP = "";
+var inventorBP = "";
+var ingredientsBP = "";
+var sideEffectsBP = "";
+var timeBP = "";
+
+function fetchBeautifyPotion(){
+    const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Beautification\n", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+}
 
 //Elixir of Life Potion
 onEvent("eol", "click", function(){
     console.log("Elixir of Life Potion Clicked");
     //show Elixir of Life Potion card
-
+    fetchElixirofL();
 });
+
+//variables for Elixir of Life
+var nameEOL = "";
+var difficultyEOL = "";
+var effectEOL = "";
+var inventorEOL = "";
+var ingredientsEOL = "";
+var sideEffectsEOL = "";
+var timeEOL = "";
+
+function fetchElixirofL(){
+    const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Elixir of life", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
+};
 
 //Amortentia Potion
 onEvent("am", "click", function(){
     console.log("Amortentia Potion Clicked");
     //show Amortentia Potion card
-
+    fetchAmortentia();
 });
+
+//variables for Amortentia
+var nameAM = "";
+var difficultyAM = "";
+var effectAM = "";
+var inventorAM = "";
+var ingredientsAM = "";
+var sideEffectsAM = "";
+var timeAM = "";
+
+function fetchAmortentia() {
+    const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Amortentia", requestOptions)
+    .then((response) => response.json())
+    .then(function(result) {
+        console.log(result);
+        nameAM = result.data[0].attributes.name;
+        difficultyAM = result.data[0].attributes.difficulty;
+        effectAM = result.data[0].attributes.effect;
+        inventorAM = result.data[0].attributes.inventor;
+        ingredientsAM = result.data[0].attributes.ingredients;
+        sideEffectsAM = result.data[0].attributes.sideeffects;
+        timeAM = result.data[0].attributes.time;
+        console.log(nameAM);
+
+        setText("potion-card", nameAM);
+        setText("potion-card", difficultyAM);
+        setText("potion-card", effectAM);
+        setText("potion-card", inventorAM);
+        setText("potion-card", ingredientsAM);
+        setText("potion-card", sideEffectsAM);
+        setText("potion-card", timeAM);
+    
+})
+.catch((error) => console.error(error));
+};
