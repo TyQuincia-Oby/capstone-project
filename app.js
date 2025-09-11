@@ -3,12 +3,72 @@ setProperty("spellBtn", "border", "3px solid black");
 setProperty("potionBtn", "border", "3px solid black");
 console.log(document.getElementById("generateBtn"));
 
+//AI Huggingface Integration
+
+var studentQuestion = ""; //student question
+var HogwartsReply = ""; //response to student question
+
 onEvent("generateBtn", "click", function() {
     console.log("Generate button clicked");
+
+    //getValue from userPrompt to comfirm input value
+    studentQuestion = getValue("user-input");
+
+    if (studentQuestion === ""){
+        //validation if student doesn't enter a message
+        setText("output-display", "ENTER A MESSAGE TO PROCEED");   
+    }
+    else {
+        setText("output-display", "Remember: Magic Lives Within You...Response Loading...");
+        console.log("Response loading...");
+        //confirms output-display will print response from AI
+    }
+
+    fetchHogwartsReply();
+    //calls function for response to studentQuestion
+    console.log("Sending Hogwarts Response:", studentQuestion);
     
-    setText("output-display", "You generated a question!");
 });
 
+function fetchHogwartsReply(){
+//fetch AI Model Code
+    async function query(data) {
+	const response = await fetch(
+		"https://router.huggingface.co/v1/chat/completions",
+		{
+			headers: {
+				Authorization: `Bearer ${HF_TOKEN}`,
+				"Content-Type": "application/json",
+			},
+			method: "POST",
+			body: JSON.stringify(data),
+		}
+	);
+	const result = await response.json();
+	return result;
+}
+
+query({ 
+    messages: [
+        {
+            role: "user",
+            content: studentQuestion,
+        },
+    ],
+    model: "meta-llama/Llama-3.1-8B-Instruct:fireworks-ai",
+}).then((response) => {
+    console.log(JSON.stringify(response));
+    studentReply = response.choices[0].message.content;
+    console.log("Hogwarts reply:", HogwartsReply);
+    setText("output-display", HogwartsReply)
+
+});
+
+};
+
+
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
 
 //All things Spells
 onEvent("spellBtn", "click", function() {
@@ -155,12 +215,13 @@ function fetchBogBan(){
 };
 
 fetch("https://api.potterdb.com/v1/spells?filter[incantation_cont]=riddikulus", requestOptions)
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
 }
 
-
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
 
 //All things Potions
 onEvent("potionBtn", "click", function() {
@@ -194,7 +255,7 @@ function fetchPolyjuice(){
 };
 
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Polyjuice\n", requestOptions)
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
 };
@@ -222,7 +283,7 @@ function fetchBeautifyPotion(){
 };
 
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Beautification\n", requestOptions)
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
 }
@@ -250,7 +311,7 @@ function fetchElixirofL(){
 };
 
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Elixir of life", requestOptions)
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
 
