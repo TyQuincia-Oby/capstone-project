@@ -17,6 +17,7 @@ onEvent("generateBtn", "click", function() {
     if (studentQuestion === ""){
         //validation if student doesn't enter a message
         setText("output-display", "ENTER A MESSAGE TO PROCEED");   
+        setProperty("output-display", "color", "red");
     }
     else {
         setText("output-display", "Remember: Magic Lives Within You...Response Loading...");
@@ -63,7 +64,6 @@ query({
     setText("output-display", HogwartsReply)
 
 });
-
 };
 
 
@@ -102,7 +102,10 @@ const requestOptions = {
 
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Lumos maxima", requestOptions)
     .then((response) => response.json())
-    .then(function(result) {console.log(result);})
+    .then(function(result) {
+        console.log(result);
+    
+    })
     .catch((error) => console.error(error));
 };
 
@@ -128,8 +131,11 @@ const requestOptions = {
 };
 
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=disarming charm", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((response) => response.json())
+    .then(function(result) {
+        console.log(result);
+    
+    })
     .catch((error) => console.error(error));
 };
 
@@ -156,11 +162,13 @@ const requestOptions = {
 };
 
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Levitation charm", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((response) => response.json())
+    .then(function (result) {
+        console.log(result);
+    
+    })
     .catch((error) => console.error(error));
 };
-
 
 
 //Patronus Charm
@@ -185,12 +193,13 @@ const requestOptions = {
 };
 
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Patronus charm", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((response) => response.json())
+    .then(function (result) {
+        console.log(result);
+    
+    })
     .catch((error) => console.error(error));
-
 };
-
 
 
 //Boggart Banishing Spell
@@ -216,7 +225,9 @@ function fetchBogBan(){
 
 fetch("https://api.potterdb.com/v1/spells?filter[incantation_cont]=riddikulus", requestOptions)
     .then((response) => response.json())
-    .then((result) => console.log(result))
+    .then(function (result) { console.log(result);
+
+    })
     .catch((error) => console.error(error));
 }
 
@@ -256,7 +267,10 @@ function fetchPolyjuice(){
 
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Polyjuice\n", requestOptions)
     .then((response) => response.json())
-    .then((result) => console.log(result))
+    .then(function (result) {
+        console.log(result);
+
+    })
     .catch((error) => console.error(error));
 };
 
@@ -284,9 +298,12 @@ function fetchBeautifyPotion(){
 
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Beautification\n", requestOptions)
     .then((response) => response.json())
-    .then((result) => console.log(result))
+    .then(function (result) {
+        console.log(result);
+
+    })
     .catch((error) => console.error(error));
-}
+};
 
 //Elixir of Life Potion
 onEvent("eol", "click", function(){
@@ -312,9 +329,11 @@ function fetchElixirofL(){
 
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Elixir of life", requestOptions)
     .then((response) => response.json())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
-
+    .then(function(result) {
+        console.log(result);
+    
+    })
+.catch((error) => console.error(error));
 };
 
 //Amortentia Potion
