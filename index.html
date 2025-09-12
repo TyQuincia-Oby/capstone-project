@@ -35,7 +35,7 @@
                 <h4 class="card-title text-center">Seek And One Shall Find:</h4>
                 
                 <!-- Output area for displaying AI response -->
-                <pre id="output-display" class="card"></pre>
+                <pre id="output-display" class="card " style="white-space: pre-wrap"></pre>
             </div>
             
             <!-- End of Output Display Section -->
@@ -76,22 +76,90 @@
         <!-- End of Buttons Section -->  
     
     <!-- Display area for Potions-->
-    <div class="card border-dark border-5 m-5 p-3" id="potion-card">
-        <div class="card-body">
+        <div class="card border-dark border-5 m-5 p-3 d-none" id="potion-card">
             <h4 class="card-title text-center ">Potion:</h4>
+            <pre id="potion-display" class="card img-fluid"></pre>   
 
-            <pre id="potion-display" class="card"></pre>
-        </div>
-    </div>    
+            <!--Polyjuice Potion Card Start-->
+            <div id="polyjuiceCard" class="card d-none">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Polyjuice Potion</h3>
+                    <p class="card-text">
+                        Name: <span id="namePP"></span><br>
+                        Difficulty: <span id="difficultyPP"></span><br>
+                        Inventor: <span id="inventorPP"></span><br>
+                        Effect: <span id="effectPP"></span><br>
+                        Side Effects: <span id="sideEffectsPP"></span><br>
+                        Ingredients: <span id="ingredientsPP"></span>
+                        Time: <span id="timePP"></span>
+                    </p>
+                </div>
+            </div>
+            <!--Polyjuice Potion Card End-->
+
+            <!--Beautification Potion Card Start-->
+            <div id="beautificationCard" class="card d-none">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Beautification Potion</h3>
+                    <p class="card-text">
+                        Name: <span id="nameBP"></span><br>
+                        Difficulty: <span id="difficultyBP"></span><br>
+                        Inventor: <span id="inventorBP"></span><br>
+                        Effect: <span id="effectBP"></span><br>
+                        Side Effects: <span id="sideEffectsBP"></span><br>
+                        Ingredients: <span id="ingredientsBP"></span>
+                        Time: <span id="timeBP"></span>
+                    </p>
+                </div>
+            </div>
+            <!--Beautification Potion Card End-->
+
+            <!--Elixir of Life Potion Card Start-->
+            <div id="elixirCard" class="card d-none">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Elixir of Life Potion</h3>
+                    <p class="card-text">
+                        Name: <span id="nameEOL"></span><br>
+                        Difficulty: <span id="difficultyEOL"></span><br>
+                        Inventor: <span id="inventorEOL"></span><br>
+                        Effect: <span id="effectEOL"></span><br>
+                        Side Effects: <span id="sideEffectsEOL"></span><br>
+                        Ingredients: <span id="ingredientsEOL"></span>
+                        Time: <span id="timeEOL"></span>
+                    </p>
+                </div>
+            </div>
+            <!--Elixir of Life Potion Card End-->
+
+            <!--Amortentia Potion Card Start-->
+            <div id="amortentiaCard" class="card d-none">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Amortentia Potion</h3>
+                    <p class="card-text">
+                        Name: <span id="nameAM"></span><br>
+                        Difficulty: <span id="difficultyAM"></span><br>
+                        Inventor: <span id="inventorAM"></span><br>
+                        Effect: <span id="effectAM"></span><br>
+                        Side Effects: <span id="sideEffectsAM"></span><br>
+                        Ingredients: <span id="ingredientsAM"></span>
+                        Time: <span id="timeAM"></span>
+                    </p>
+                </div>
+            </div>
+            <!--Amortentia Potion Card End-->
+
+        <!--End of Potions Div-->
+        </div>   
+    
     <!-- Display area for Spells-->
-        <div class="card border-dark border-5 m-5 p-3" id="spell-card">
+        <div class="card border-dark border-5 m-5 p-3 d-none" id="spell-card">
             <h4 class="card-title text-center">Spell:</h4>
-            <pre id="spell-display" class="card"></pre>
+            <pre id="spell-display" class="card img-fluid"></pre>
         
             <!--Lumos Card Start-->
             <div id="lumosCard" class="card d-none">
                 <div class="card-body">
-                    <h3 class="card-title text-center">Lumos</h3>
+                    <h3 class="card-title text-center">Lumos Maxima</h3>
                     <p class="card-text">
                         Name: <span id="nameLU"></span><br>
                         Category: <span id="categoryLU"></span><br>
@@ -102,36 +170,76 @@
                     </p>
                 </div>
             </div>
-        </div>
             <!--Lumos Card End-->
 
             <!--Disarming Charm Start-->
-            <div id="disarmCard" class="d-none">
-                <h3 class="card-title text-center">Disarming Charm</h3>
+            <div id="disarmingCard" class="card d-none">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Disarming Charm</h3>
                     <p class="card-text">
-                        Name: <span id="namedc"></span><br>
-                        Category: <span id="categorydc"></span><br>
-                        Creator: <span id="creatordc"></span><br>
-                        Effect: <span id="effectdc"></span><br>
-                        Incantation: <span id="incantationdc"></span><br>
-                        Hand: <span id="handdc"></span>
+                        Name: <span id="nameDC"></span><br>
+                        Category: <span id="categoryDC"></span><br>
+                        Creator: <span id="creatorDC"></span><br>
+                        Effect: <span id="effectDC"></span><br>
+                        Incantation: <span id="incantationDC"></span><br>
+                        Hand: <span id="handDC"></span>
                     </p>
+                </div>
             </div>
             <!--Disarming Charm Card End-->
-
+            
             <!--Levitation Charm Card Start-->
-            <div id="lumosCard" class="d-none">
-                <h3 class="card-title text-center">Lumos</h3>
+            <div id="levitationCard" class="card d-none">
+                <div class="card-body">
+                <h3 class="card-title text-center">Levitation Charm</h3>
                     <p class="card-text">
-                        Name: <span id="namelu"></span><br>
-                        Category: <span id="categorylu"></span><br>
-                        Creator: <span id="creatorlu"></span><br>
-                        Effect: <span id="effectlu"></span><br>
-                        Incantation: <span id="incantationlu"></span><br>
-                        Hand: <span id="handlu"></span>
+                        Name: <span id="nameLC"></span><br>
+                        Category: <span id="categoryLC"></span><br>
+                        Creator: <span id="creatorLC"></span><br>
+                        Effect: <span id="effectLC"></span><br>
+                        Incantation: <span id="incantationLC"></span><br>
+                        Hand: <span id="handLC"></span>
                     </p>
+                </div>
             </div>
             <!--Levitation Charm Card End-->
+
+                        <!--Patronus Charm Card Start-->
+            <div id="patronusCard" class="card d-none">
+                <div class="card-body">
+                <h3 class="card-title text-center">Patronus Charm</h3>
+                    <p class="card-text">
+                        Name: <span id="namePC"></span><br>
+                        Category: <span id="categoryPC"></span><br>
+                        Creator: <span id="creatorPC"></span><br>
+                        Effect: <span id="effectPC"></span><br>
+                        Incantation: <span id="incantationPC"></span><br>
+                        Hand: <span id="handPC"></span>
+                    </p>
+                </div>
+            </div>
+            <!--Patronus Charm Card End-->
+
+                        <!--Boggart Banishing Spell Card Start-->
+            <div id="banishingCard" class="card d-none">
+                <div class="card-body">
+                <h3 class="card-title text-center">Boggart Banishing Spell</h3>
+                    <p class="card-text">
+                        Name: <span id="nameBBS"></span><br>
+                        Category: <span id="categoryBBS"></span><br>
+                        Creator: <span id="creatorBBS"></span><br>
+                        Effect: <span id="effectBBS"></span><br>
+                        Incantation: <span id="incantationBBS"></span><br>
+                        Hand: <span id="handBBS"></span>
+                    </p>
+                </div>
+            </div>
+            <!--Boggart Banishing Spell Card End-->
+
+        <!--End of Spell Div-->
+        </div>
+
+
 
             
         </div>
