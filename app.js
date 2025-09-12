@@ -82,8 +82,10 @@ onEvent("spellBtn", "click", function() {
 //Lumos
 onEvent("lu", "click", function(){
     console.log("Lumos Spell Clicked");
-    //show Lumos Spell card
     fetchLumosMaxima();
+    //show Lumos Spell card
+    document.getElementById("lumosCard").classList.remove("d-none");
+    document.getElementById("spell-display").classList.remove("d-none");
 });
 
 //variables for Lumos Spell
@@ -121,13 +123,13 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Lumos maxima", reque
         console.log(handLU);
         console.log(incantationLU);
 
-        //setText in spell card Boggart Banishing Spell
-        setText("spell-card", nameLU);
-        setText("spell-card", categoryLU);
-        setText("spell-card", effectLU);
-        setText("spell-card", creatorLU);
-        setText("spell-card", handLU);
-        setText("spell-card", incantationLU);
+        //setText in spell card Lumos Maxima
+        setText("nameLU", nameLU);
+        setText("categoryLU", categoryLU);
+        setText("effectLU", effectLU);
+        setText("creatorLU", creatorLU);
+        setText("handLU", handLU);
+        setText("incantationLU", incantationLU);
     
     })
     .catch((error) => console.error(error));
@@ -138,6 +140,9 @@ onEvent("dc", "click", function(){
     console.log("Disarming Charm Clicked")
     //show Disarming Charm Spell Card
     fetchDisarmingCharm();
+
+    document.getElementById("disarmingCard").classList.remove("d-none");
+    document.getElementById("spell-display").classList.remove("d-none");
 });
 
 //variables for Disarming Charm
@@ -176,12 +181,12 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=disarming charm", re
         console.log(incantationDC);
 
         //setText in spell card Disarming Charm
-        setText("spell-card", nameDC);
-        setText("spell-card", categoryDC);
-        setText("spell-card", effectDC);
-        setText("spell-card", creatorDC);
-        setText("spell-card", handDC);
-        setText("spell-card", incantationDC);
+        setText("nameDC", nameDC);
+        setText("ategoryDC", categoryDC);
+        setText("effectDC", effectDC);
+        setText("creatorDC", creatorDC);
+        setText("handDC", handDC);
+        setText("incantationDC", incantationDC);
     
     })
     .catch((error) => console.error(error));
@@ -192,6 +197,9 @@ onEvent("lc", "click", function(){
     console.log("Levitation Charm Clicked");
     //show Levitation Charm card
     fetchLevitationCharm();
+
+    document.getElementById("levitationCard").classList.remove("d-none");
+    document.getElementById("spell-display").classList.remove("d-none");
 
 });
 
@@ -231,12 +239,12 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Levitation charm", r
         console.log(incantationLC);
 
         //setText in spell card Levitation Charm
-        setText("spell-card", nameLC);
-        setText("spell-card", categoryLC);
-        setText("spell-card", effectLC);
-        setText("spell-card", creatorLC);
-        setText("spell-card", handLC);
-        setText("spell-card", incantationLC);
+        setText("nameLC", nameLC);
+        setText("categoryLC", categoryLC);
+        setText("effectLC", effectLC);
+        setText("creatorLC", creatorLC);
+        setText("handLC", handLC);
+        setText("incantationLC", incantationLC);
     
     })
     .catch((error) => console.error(error));
@@ -248,6 +256,9 @@ onEvent("pc", "click", function(){
     console.log("Patronus Charm Clicked")
     //show Patronus Charm Spell Card
     fetchPatronusCharm();
+
+    document.getElementById("patronusCard").classList.remove("d-none");
+    document.getElementById("spell-display").classList.remove("d-none");
 });
 
 //variables for Patronus Charm
@@ -286,12 +297,12 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Patronus charm", req
         console.log(incantationPC);
 
         //setText in spell card Patronus Charm
-        setText("spell-card", namePC);
-        setText("spell-card", categoryPC);
-        setText("spell-card", effectPC);
-        setText("spell-card", creatorPC);
-        setText("spell-card", handPC);
-        setText("spell-card", incantationPC);
+        setText("namePC", namePC);
+        setText("categoryPC)", categoryPC);
+        setText("effectPC", effectPC);
+        setText("creatorPC", creatorPC);
+        setText("handPC", handPC);
+        setText("incantationPC", incantationPC);
     
     })
     .catch((error) => console.error(error));
@@ -303,6 +314,9 @@ onEvent("bbs", "click", function(){
     console.log("Boggart Banishing Spell Clicked")
     //show Boggart Banishing Spell Card
     fetchBogBan();
+
+    document.getElementById("banishingCard").classList.remove("d-none");
+    document.getElementById("spell-display").classList.remove("d-none");
 });
 
 //variables for Boggart Banishing Spell
@@ -341,12 +355,12 @@ fetch("https://api.potterdb.com/v1/spells?filter[incantation_cont]=riddikulus", 
         console.log(incantationBBS);
 
         //setText in spell card Boggart Banishing Spell
-        setText("spell-card", nameBBS);
-        setText("spell-card", categoryBBS);
-        setText("spell-card", effectBBS);
-        setText("spell-card", creatorBBS);
-        setText("spell-card", handBBS);
-        setText("spell-card", incantationBBS);
+        setText("nameBBS", nameBBS);
+        setText("categoryBBS", categoryBBS);
+        setText("effectBBS", effectBBS);
+        setText("creatorBBS", creatorBBS);
+        setText("handBBS", handBBS);
+        setText("incantationBBS", incantationBBS);
 
 
     })
@@ -370,6 +384,9 @@ onEvent("pp", "click", function() {
     console.log("Polyjuice Potion Clicked");
     //show Polyjuice Potion card
     fetchPolyjuice();
+
+    document.getElementById("polyjuiceCard").classList.remove("d-none");
+    document.getElementById("potion-display").classList.remove("d-none");
 });
 
 //variables for Polyjuice Potion
@@ -410,13 +427,13 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Polyjuice\n", reque
         console.log(timePP);
 
         //setText in potion card Polyjuice Potion
-        setText("potion-card", namePP);
-        setText("potion-card", difficultyPP);
-        setText("potion-card", effectPP);
-        setText("potion-card", inventorPP);
-        setText("potion-card", ingredientsPP);
-        setText("potion-card", sideEffectsPP);
-        setText("potion-card", timePP);
+        setText("namePP", namePP);
+        setText("difficultyPP", difficultyPP);
+        setText("effectPP", effectPP);
+        setText("inventorPP", inventorPP);
+        setText("ingredientsPP", ingredientsPP);
+        setText("sideEffectsPP", sideEffectsPP);
+        setText("timePP", timePP);
     })
     .catch((error) => console.error(error));
 };
@@ -426,6 +443,9 @@ onEvent("bp", "click", function(){
     console.log("Beautification Potion Clicked");
     //show Beautification Potion card
     fetchBeautifyPotion();
+
+    document.getElementById("beautificationCard").classList.remove("d-none");
+    document.getElementById("potion-display").classList.remove("d-none");
 });
 
 //variables for Beautification Potion
@@ -466,13 +486,13 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Beautification\n", 
         console.log(timeBP);
 
         //setText in potion card Beautification Potion
-        setText("potion-card", nameBP);
-        setText("potion-card", difficultyBP);
-        setText("potion-card", effectBP);
-        setText("potion-card", inventorBP);
-        setText("potion-card", ingredientsBP);
-        setText("potion-card", sideEffectsBP);
-        setText("potion-card", timeBP);
+        setText("nameBP", nameBP);
+        setText("difficultyBP", difficultyBP);
+        setText("effectBP", effectBP);
+        setText("inventorBP", inventorBP);
+        setText("ingredientsBP", ingredientsBP);
+        setText("sideEffectsBP", sideEffectsBP);
+        setText("timeBP", timeBP);
     })
     .catch((error) => console.error(error));
 };
@@ -482,6 +502,9 @@ onEvent("eol", "click", function(){
     console.log("Elixir of Life Potion Clicked");
     //show Elixir of Life Potion card
     fetchElixirofL();
+
+    document.getElementById("elixirCard").classList.remove("d-none");
+    document.getElementById("potion-display").classList.remove("d-none");
 });
 
 //variables for Elixir of Life
@@ -522,13 +545,13 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Elixir of life", re
         console.log(timeEOL);
 
         //setText in potion card Elixir of Life
-        setText("potion-card", nameEOL);
-        setText("potion-card", difficultyEOL);
-        setText("potion-card", effectEOL);
-        setText("potion-card", inventorEOL);
-        setText("potion-card", ingredientsEOL);
-        setText("potion-card", sideEffectsEOL);
-        setText("potion-card", timeEOL);
+        setText("nameEOL", nameEOL);
+        setText("difficultyEOL", difficultyEOL);
+        setText("effectEOL", effectEOL);
+        setText("inventorEOL", inventorEOL);
+        setText("ingredientsEOL", ingredientsEOL);
+        setText("sideEffectsEOL", sideEffectsEOL);
+        setText("timeEOL", timeEOL);
     
     })
 .catch((error) => console.error(error));
@@ -539,6 +562,9 @@ onEvent("am", "click", function(){
     console.log("Amortentia Potion Clicked");
     //show Amortentia Potion card
     fetchAmortentia();
+
+    document.getElementById("amortentiaCard").classList.remove("d-none");
+    document.getElementById("potion-display").classList.remove("d-none");
 });
 
 //variables for Amortentia
@@ -580,13 +606,13 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Amortentia", reques
         console.log(timeAM);
 
         //setText in potion card Amortentia
-        setText("potion-card", nameAM);
-        setText("potion-card", difficultyAM);
-        setText("potion-card", effectAM);
-        setText("potion-card", inventorAM);
-        setText("potion-card", ingredientsAM);
-        setText("potion-card", sideEffectsAM);
-        setText("potion-card", timeAM);
+        setText("nameAM", nameAM);
+        setText("difficultyAM", difficultyAM);
+        setText("effectAM", effectAM);
+        setText("inventorAM", inventorAM);
+        setText("pingredientsAM", ingredientsAM);
+        setText("sideEffectsAM", sideEffectsAM);
+        setText("timeAM", timeAM);
     
 })
 .catch((error) => console.error(error));
