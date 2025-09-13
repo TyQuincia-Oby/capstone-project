@@ -79,10 +79,23 @@ onEvent("spellBtn", "click", function() {
     console.log("List of Spells Shown in spell-display")
 });
 
+function clearSpellCards(){
+    document.getElementById("lumosCard").classList.add("d-none");
+    document.getElementById("disarmingCard").classList.add("d-none");
+    document.getElementById("patronusCard").classList.add("d-none");
+    document.getElementById("levitationCard").classList.add("d-none");
+    document.getElementById("banishingCard").classList.add("d-none");
+    
+};
+
+
+
 //Lumos
 onEvent("lu", "click", function(){
     console.log("Lumos Spell Clicked");
     setProperty("lu", "background-color", "red");
+    clearSpellCards();
+    
     fetchLumosMaxima();
 
     //show page spell card
@@ -111,23 +124,23 @@ const requestOptions = {
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Lumos maxima", requestOptions)
     .then((response) => response.json())
     .then(function(result) {
-        console.log(result);
+        console.log(result.data[0].attributes);
 
         //pulls live data into variables and creates json pojo in console (streamlined)
-        nameLU = result.data[0].attributes.name;
-        categoryLU = result.data[0].attributes.category;
-        effectLU = result.data[0].attributes.effect;
-        creatorLU = result.data[0].attributes.creator;
-        handLU = result.data[0].attributes.hand;
-        incantationLU = result.data[0].attributes.incantation;
+        nameLU = (result.data[0].attributes.name);
+        categoryLU = (result.data[0].attributes.category);
+        effectLU = (result.data[0].attributes.effect);
+        creatorLU = (result.data[0].attributes.creator);
+        handLU = (result.data[0].attributes.hand);
+        incantationLU = (result.data[0].attributes.incantation);
 
         //prints live data from variables into console 
-        console.log(nameLU);
-        console.log(categoryLU);
-        console.log(effectLU);
-        console.log(creatorLU);
-        console.log(handLU);
-        console.log(incantationLU);
+        console.log("Name: ", nameLU);
+        console.log("Category: ", categoryLU);
+        console.log("Effect: ", effectLU);
+        console.log("Creator: ", creatorLU);
+        console.log("Hand: ", handLU);
+        console.log("Incantation: ", incantationLU);
 
         //setText in spell card Lumos Maxima
         setText("nameLU", nameLU);
@@ -145,6 +158,8 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Lumos maxima", reque
 onEvent("dc", "click", function(){
     console.log("Disarming Charm Clicked")
     setProperty("dc", "background-color", "red");
+    clearSpellCards();
+    
     //show Disarming Charm Spell Card
     fetchDisarmingCharm();
     //show page spell card
@@ -170,23 +185,23 @@ const requestOptions = {
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=disarming charm", requestOptions)
     .then((response) => response.json())
     .then(function(result) {
-        console.log(result);
+        console.log(result.data[0].attributes);
 
         //pulls live data into variables and creates json pojo in console (streamlined)
-        nameDC = result.data[0].attributes.name;
-        categoryDC = result.data[0].attributes.category;
-        effectDC = result.data[0].attributes.effect;
-        creatorDC = result.data[0].attributes.creator;
-        handDC = result.data[0].attributes.hand;
-        incantationDC = result.data[0].attributes.incantation;
+        nameDC = (result.data[0].attributes.name);
+        categoryDC = (result.data[0].attributes.category);
+        effectDC = (result.data[0].attributes.effect);
+        creatorDC = (result.data[0].attributes.creator);
+        handDC = (result.data[0].attributes.hand);
+        incantationDC = (result.data[0].attributes.incantation);
 
         //prints live data from variables into console 
-        console.log(nameDC);
-        console.log(categoryDC);
-        console.log(effectDC);
-        console.log(creatorDC);
-        console.log(handDC);
-        console.log(incantationDC);
+        console.log("Name: ", nameDC);
+        console.log("Category: ", categoryDC);
+        console.log("Effect: ", effectDC);
+        console.log("Creator: ", creatorDC);
+        console.log("Hand: ", handDC);
+        console.log("Incantation: ", incantationDC);
 
         //setText in spell card Disarming Charm
         setText("nameDC", nameDC);
@@ -204,6 +219,8 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=disarming charm", re
 onEvent("lc", "click", function(){
     console.log("Levitation Charm Clicked");
     setProperty("lc", "background-color", "red");
+    clearSpellCards();
+    
     //show Levitation Charm card
     fetchLevitationCharm();
     //show page spell card
@@ -230,23 +247,23 @@ const requestOptions = {
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Levitation charm", requestOptions)
     .then((response) => response.json())
     .then(function (result) {
-        console.log(result);
+        console.log(result.data[0].attributes);
 
         //pulls live data into variables and creates json pojo in console (streamlined)
-        nameLC = result.data[0].attributes.name;
-        categoryLC = result.data[0].attributes.category;
-        effectLC = result.data[0].attributes.effect;
-        creatorLC = result.data[0].attributes.creator;
-        handLC = result.data[0].attributes.hand;
-        incantationLC = result.data[0].attributes.incantation;
+        nameLC = (result.data[0].attributes.name);
+        categoryLC = (result.data[0].attributes.category);
+        effectLC = (result.data[0].attributes.effect);
+        creatorLC = (result.data[0].attributes.creator);
+        handLC = (result.data[0].attributes.hand);
+        incantationLC = (result.data[0].attributes.incantation);
 
         //prints live data from variables into console 
-        console.log(nameLC);
-        console.log(categoryLC);
-        console.log(effectLC);
-        console.log(creatorLC);
-        console.log(handLC);
-        console.log(incantationLC);
+        console.log("Name: ", nameLC);
+        console.log("Category: ", categoryLC);
+        console.log("Effect: ", effectLC);
+        console.log("Creator: ", creatorLC);
+        console.log("Hand: ", handLC);
+        console.log("Incantation: ", incantationLC);
 
         //setText in spell card Levitation Charm
         setText("nameLC", nameLC);
@@ -265,6 +282,8 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Levitation charm", r
 onEvent("pc", "click", function(){
     console.log("Patronus Charm Clicked")
     setProperty("pc", "background-color", "red");
+    clearSpellCards();
+    
     //show Patronus Charm Spell Card
     fetchPatronusCharm();
         //show page spell card
@@ -290,23 +309,23 @@ const requestOptions = {
 fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Patronus charm", requestOptions)
     .then((response) => response.json())
     .then(function (result) {
-        console.log(result);
+        console.log(result.data[0].attributes);
 
         //pulls live data into variables and creates json pojo in console (streamlined)
-        namePC = result.data[0].attributes.name;
-        categoryPC = result.data[0].attributes.category;
-        effectPC = result.data[0].attributes.effect;
-        creatorPC = result.data[0].attributes.creator;
-        handPC = result.data[0].attributes.hand;
-        incantationPC = result.data[0].attributes.incantation;
+        namePC = (result.data[0].attributes.name);
+        categoryPC = (result.data[0].attributes.category);
+        effectPC = (result.data[0].attributes.effect);
+        creatorPC = (result.data[0].attributes.creator);
+        handPC = (result.data[0].attributes.hand);
+        incantationPC = (result.data[0].attributes.incantation);
 
         //prints live data from variables into console 
-        console.log(namePC);
-        console.log(categoryPC);
-        console.log(effectPC);
-        console.log(creatorPC);
-        console.log(handPC);
-        console.log(incantationPC);
+        console.log("Name: ", namePC);
+        console.log("Category: ", categoryPC);
+        console.log("Effect: ", effectPC);
+        console.log("Creator: ", creatorPC);
+        console.log("Hand: ", handPC);
+        console.log("Incantation: ", incantationPC);
 
         //setText in spell card Patronus Charm
         setText("namePC", namePC);
@@ -325,6 +344,8 @@ fetch("https://api.potterdb.com/v1/spells?filter[name_cont]=Patronus charm", req
 onEvent("bbs", "click", function(){
     console.log("Boggart Banishing Spell Clicked")
     setProperty("bbs", "background-color", "red");
+    clearSpellCards();
+    
     //show Boggart Banishing Spell Card
     fetchBogBan();
     //show page spell card
@@ -350,23 +371,23 @@ function fetchBogBan(){
 fetch("https://api.potterdb.com/v1/spells?filter[incantation_cont]=riddikulus", requestOptions)
     .then((response) => response.json())
     .then(function (result) { 
-        console.log(result);
+        console.log(result.data[0].attributes);
 
         //pulls live data into variables and creates json pojo in console (streamlined)
-        nameBBS = result.data[0].attributes.name;
-        categoryBBS = result.data[0].attributes.category;
-        effectBBS = result.data[0].attributes.effect;
-        creatorBBS = result.data[0].attributes.creator;
-        handBBS = result.data[0].attributes.hand;
-        incantationBBS = result.data[0].attributes.incantation;
+        nameBBS = (result.data[0].attributes.name);
+        categoryBBS = (result.data[0].attributes.category);
+        effectBBS = (result.data[0].attributes.effect);
+        creatorBBS = (result.data[0].attributes.creator);
+        handBBS = (result.data[0].attributes.hand);
+        incantationBBS = (result.data[0].attributes.incantation);
 
         //prints live data from variables into console 
-        console.log(nameBBS);
-        console.log(categoryBBS);
-        console.log(effectBBS);
-        console.log(creatorBBS);
-        console.log(handBBS);
-        console.log(incantationBBS);
+        console.log("Name: ", nameBBS);
+        console.log("Category: ", categoryBBS);
+        console.log("Effect: ", effectBBS);
+        console.log("Creator: ", creatorBBS);
+        console.log("Hand: ", handBBS);
+        console.log("Incantation: ", incantationBBS);
 
         //setText in spell card Boggart Banishing Spell
         setText("nameBBS", nameBBS);
@@ -393,10 +414,20 @@ onEvent("potionBtn", "click", function() {
     console.log("List of Potions Shown in potion-display")
 });
 
+function clearPotionCards(){
+    document.getElementById("polyjuiceCard").classList.add("d-none");
+    document.getElementById("beautificationCard").classList.add("d-none");
+    document.getElementById("elixirCard").classList.add("d-none");
+    document.getElementById("amortentiaCard").classList.add("d-none");
+
+};
+
 //Polyjuice Potion
 onEvent("pp", "click", function() {
     console.log("Polyjuice Potion Clicked");
     setProperty("pp", "background-color", "blue");
+    clearPotionCards();
+    
     //show Polyjuice Potion card
     fetchPolyjuice();
     //show page spell card
@@ -423,24 +454,24 @@ function fetchPolyjuice(){
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Polyjuice", requestOptions)
     .then((response) => response.json())
     .then(function (result) {
-        console.log(result);
+        console.log(result.data[0].attributes);
         //pulls live data into variables and creates json pojo in console (streamlined)
-        namePP = result.data[0].attributes.name;
-        difficultyPP = result.data[0].attributes.difficulty;
-        effectPP = result.data[0].attributes.effect;
-        inventorPP = result.data[0].attributes.inventors;
-        ingredientsPP = result.data[0].attributes.ingredients;
-        sideEffectsPP = result.data[0].attributes.side_effects;
-        timePP = result.data[0].attributes.time;
+        namePP = (result.data[0].attributes.name);
+        difficultyPP = (result.data[0].attributes.difficulty);
+        effectPP = (result.data[0].attributes.effect);
+        inventorPP = (result.data[0].attributes.inventors);
+        ingredientsPP = (result.data[0].attributes.ingredients);
+        sideEffectsPP = (result.data[0].attributes.side_effects);
+        timePP = (result.data[0].attributes.time);
 
         //prints live data from variables into console 
-        console.log(namePP);
-        console.log(difficultyPP);
-        console.log(effectPP);
-        console.log(inventorPP);
-        console.log(ingredientsPP);
-        console.log(sideEffectsPP);
-        console.log(timePP);
+        console.log("Name: ", namePP);
+        console.log("Difficulty: ", difficultyPP);
+        console.log("Effect: ", effectPP);
+        console.log("Inventor: ", inventorPP);
+        console.log("Ingredients: ", ingredientsPP);
+        console.log("Side Effects: ", sideEffectsPP);
+        console.log("Time: ", timePP);
 
         //setText in potion card Polyjuice Potion
         setText("namePP", namePP);
@@ -458,6 +489,8 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Polyjuice", request
 onEvent("bp", "click", function(){
     console.log("Beautification Potion Clicked");
     setProperty("bp", "background-color", "blue");
+    clearPotionCards();
+    
     //show Beautification Potion card
     fetchBeautifyPotion();
     //show page spell card
@@ -484,24 +517,24 @@ function fetchBeautifyPotion(){
 fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Beautification\n", requestOptions)
     .then((response) => response.json())
     .then(function (result) {
-        console.log(result);
+        console.log(result.data[0].attributes);
         //pulls live data into variables and creates json pojo in console (streamlined)
-        nameBP = result.data[0].attributes.name;
-        difficultyBP = result.data[0].attributes.difficulty;
-        effectBP = result.data[0].attributes.effect;
-        inventorBP = result.data[0].attributes.inventors;
-        ingredientsBP = result.data[0].attributes.ingredients;
-        sideEffectsBP = result.data[0].attributes.side_effects;
-        timeBP = result.data[0].attributes.time;
+        nameBP = (result.data[0].attributes.name);
+        difficultyBP = (result.data[0].attributes.difficulty);
+        effectBP = (result.data[0].attributes.effect);
+        inventorBP = (result.data[0].attributes.inventors);
+        ingredientsBP = (result.data[0].attributes.ingredients);
+        sideEffectsBP = (result.data[0].attributes.side_effects);
+        timeBP = (result.data[0].attributes.time);
 
         //prints live data from variables into console 
-        console.log(nameBP);
-        console.log(difficultyBP);
-        console.log(effectBP);
-        console.log(inventorBP);
-        console.log(ingredientsBP);
-        console.log(sideEffectsBP);
-        console.log(timeBP);
+        console.log("Name: ", nameBP);
+        console.log("Difficulty: ", difficultyBP);
+        console.log("Effect: ",  effectBP);
+        console.log("Inventor: ", inventorBP);
+        console.log("Ingredients: ", ingredientsBP);
+        console.log("Side Effects: ", sideEffectsBP);
+        console.log("Time: ", timeBP);
 
         //setText in potion card Beautification Potion
         setText("nameBP", nameBP);
@@ -519,6 +552,8 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Beautification\n", 
 onEvent("eol", "click", function(){
     console.log("Elixir of Life Potion Clicked");
     setProperty("eol", "background-color", "blue");
+    clearPotionCards();
+    
     //show Elixir of Life Potion card
     fetchElixirofL();
     //show page spell card
@@ -547,22 +582,22 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Elixir of life", re
     .then(function(result) {
         console.log(result.data[0].attributes);
         //pulls live data into variables and creates json pojo in console (streamlined)
-        nameEOL = result.data[0].attributes.name;
-        difficultyEOL = result.data[0].attributes.difficulty;
-        effectEOL = result.data[0].attributes.effect;
-        inventorEOL = result.data[0].attributes.inventors;
-        ingredientsEOL = result.data[0].attributes.ingredients;
-        sideEffectsEOL = result.data[0].attributes.side_effects;
-        timeEOL = result.data[0].attributes.time;
+        nameEOL = (result.data[0].attributes.name);
+        difficultyEOL = (result.data[0].attributes.difficulty);
+        effectEOL = (result.data[0].attributes.effect);
+        inventorEOL = (result.data[0].attributes.inventors);
+        ingredientsEOL = (result.data[0].attributes.ingredients);
+        sideEffectsEOL = (result.data[0].attributes.side_effects);
+        timeEOL = (result.data[0].attributes.time);
 
         //prints live data from variables into console 
         console.log("Name: ", nameEOL);
         console.log("Difficulty: ", difficultyEOL);
         console.log("Effect: ", effectEOL);
-        console.log(inventorEOL);
-        console.log(ingredientsEOL);
-        console.log(sideEffectsEOL);
-        console.log(timeEOL);
+        console.log("Inventor: ", inventorEOL);
+        console.log("Ingredients:", ingredientsEOL);
+        console.log("Side Effects: ", sideEffectsEOL);
+        console.log("Time: ", timeEOL);
 
         //setText in potion card Elixir of Life
         setText("nameEOL", nameEOL);
@@ -581,6 +616,8 @@ fetch("https://api.potterdb.com/v1/potions?filter[name_cont]=Elixir of life", re
 onEvent("am", "click", function(){
     console.log("Amortentia Potion Clicked");
     setProperty("am", "background-color", "blue");
+    clearPotionCards();
+    
     //show Amortentia Potion card
     fetchAmortentia();
     //show page spell card
